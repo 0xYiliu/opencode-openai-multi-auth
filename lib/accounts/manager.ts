@@ -572,14 +572,6 @@ export class AccountManager {
     return this.accounts[this.activeIndex] || this.accounts[0];
   }
 
-  getAccountByIndex(index: number): ManagedAccount | null {
-    return this.accounts.find((account) => account.index === index) || null;
-  }
-
-  findAccountByEmail(email: string): ManagedAccount | null {
-    return this.accounts.find((account) => account.email === email) || null;
-  }
-
   /**
    * Get the next available account excluding the specified account indices.
    * Used for model fallback retry logic - try other accounts before falling back to older model.
